@@ -1,20 +1,26 @@
-import "../components/first-component.component";
 import { html } from "lit-element";
-import { mainStyles } from "../styles";
+class FirstPage extends HTMLElement {
 
-const styles = html` <style>
-  ${mainStyles()}
-</style>`;
-
-class firstPage extends HTMLElement {
   constructor() {
     super();
-    console.log("Created custom element!");
+    console.log("sup");
+  }
+
+  render(){
+    return html`
+    <section>My section</section>
+    <article>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula metus eu mauris faucibus condimentum eget nec ipsum. 
+    Praesent nec diam in ligula bibendum finibus. Nam eu diam non nisi tincidunt hendrerit vitae at ipsum. Curabitur magna lorem, auctor et 
+    sapien ac, suscipit malesuada purus. Duis sit amet lectus mauris. Quisque in porta lorem. Suspendisse pharetra rutrum ligula, at mattis augue tempor ut. 
+    Phasellus vitae arcu non ex suscipit malesuada. Praesent sed magna ligula. Sed at turpis nec urna gravida gravida vitae vitae velit. 
+    Praesent fermentum ante ac malesuada auctor. Morbi lacus orci, eleifend vel dignissim eget, tempus vel sem. Fusce auctor ut sem at ultricies.</p>
+    </article>
+    `;
   }
 }
-function addCustomElement() {
-  customElements.define("e-first-page", firstPage);
-  console.log("Added MyElement to custom element registry!");
-}
-// add call here, because onload did not work for me
-addCustomElement();
+
+customElements.define('first-page', FirstPage);
+console.log("script is here");
+
+
